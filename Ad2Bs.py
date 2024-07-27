@@ -128,7 +128,7 @@ if uploaded_file:
                 st.download_button(
                     label="Download Processed File",
                     data=formatted_output,
-                    file_name="BS_Date_converted_with_fy_quarter_and_bs_month.xlsx",
+                    file_name="BS_Date_converted.xlsx",
                     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                 )
 
