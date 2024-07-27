@@ -73,15 +73,22 @@ def map_month_to_name(np_date):
 st.set_page_config(page_title="Nepali Date Processing App", page_icon="📅", layout="wide")
 st.title("📅 Nepali Date Processing App")
 
-# Custom CSS to make the display more compact
+# Custom HTML and CSS for scaling and layout
 st.markdown(
     """
     <style>
-    .css-1v3fvcr { font-size: 10px; } /* Smaller font size */
-    .css-1r7g26i { width: 80%; margin: auto; } /* Reduced width */
-    .css-1emrehy { font-size: 10px; } /* Smaller font size for other elements */
-    .stButton { padding: 5px; font-size: 10px; } /* Reduced padding and font size for buttons */
+    .reportview-container {
+        max-width: 90%;
+        margin: auto;
+    }
+    .css-1v3fvcr, .css-1emrehy, .stButton {
+        font-size: 10px; /* Adjust font size */
+    }
+    .stButton {
+        padding: 5px; /* Adjust button padding */
+    }
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
     """,
     unsafe_allow_html=True
 )
