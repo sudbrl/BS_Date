@@ -70,28 +70,8 @@ def map_month_to_name(np_date):
     return month_mapping.get(np_month, 'Invalid Month')
 
 # Streamlit app
-st.set_page_config(page_title="Nepali Date Processing App", page_icon="📅", layout="wide")
+st.set_page_config(page_title="Nepali Date Processing App", page_icon="📅", layout="centered")
 st.title("📅 Nepali Date Processing App")
-
-# Custom HTML and CSS for scaling and layout
-st.markdown(
-    """
-    <style>
-    .reportview-container {
-        max-width: 90%;
-        margin: auto;
-    }
-    .css-1v3fvcr, .css-1emrehy, .stButton {
-        font-size: 10px; /* Adjust font size */
-    }
-    .stButton {
-        padding: 5px; /* Adjust button padding */
-    }
-    </style>
-    <meta name="viewport" content="width=device-width, initial-scale=0.75">
-    """,
-    unsafe_allow_html=True
-)
 
 # Provide a link to download a sample workbook
 sample_url = "https://github.com/sudbrl/BS_Date/blob/main/BS_Date.xlsx"
