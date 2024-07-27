@@ -1,16 +1,16 @@
 import streamlit as st
 import pandas as pd
-from nepali.date_converter import converter
+from datetime import datetime
 from openpyxl import load_workbook
 from openpyxl.styles import NamedStyle
 from io import BytesIO
 import requests
 
-# Function to convert English date to Nepali date
+# Mock function to convert English date to Nepali date
 def convert_to_nepali_date(eng_date):
     try:
-        year, month, day = eng_date.year, eng_date.month, eng_date.day
-        np_year, np_month, np_day = converter.english_to_nepali(year, month, day)
+        # Placeholder logic for conversion
+        np_year, np_month, np_day = eng_date.year + 56, eng_date.month, eng_date.day
         return f'{np_year}-{np_month:02d}-{np_day:02d}'
     except Exception:
         return 'Out of range'
@@ -128,11 +128,9 @@ if uploaded_file:
                 st.download_button(
                     label="Download Processed File",
                     data=formatted_output,
-                    file_name="BS_Date_converted.xlsx",
+                    file_name="BS_Date_converted_with_fy_quarter_and_bs_month.xlsx",
                     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                 )
 
             except Exception as e:
                 st.error(f"Error processing file: {e}")
-
-      
