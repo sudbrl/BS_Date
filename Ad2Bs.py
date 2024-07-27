@@ -6,6 +6,9 @@ from openpyxl.styles import NamedStyle
 from io import BytesIO
 import requests
 
+# Streamlit app configuration
+st.set_page_config(page_title="Nepali Date Processing App", page_icon="📅", layout="centered")
+
 # Inject custom CSS
 st.markdown("""
     <style>
@@ -39,8 +42,6 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# Streamlit app configuration
-st.set_page_config(page_title="Nepali Date Processing App", page_icon="📅", layout="centered")
 st.title("📅 Nepali Date Processing App")
 
 # Mock function to convert English date to Nepali date
