@@ -6,44 +6,6 @@ from openpyxl.styles import NamedStyle
 from io import BytesIO
 import requests
 
-# Streamlit app configuration
-st.set_page_config(page_title="Nepali Date Processing App", page_icon="📅", layout="centered")
-
-# Inject custom CSS
-st.markdown("""
-    <style>
-    /* General app adjustments */
-    .block-container {
-        max-width: 800px;
-        padding: 2rem;
-    }
-    /* Title adjustments */
-    .stMarkdown h1 {
-        font-size: 2rem;
-        font-weight: 600;
-    }
-    /* Button adjustments */
-    .stButton button {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-    }
-    /* File uploader adjustments */
-    .stFileUploader label {
-        font-size: 1rem;
-    }
-    /* Spinner adjustments */
-    .stSpinner {
-        font-size: 1rem;
-    }
-    /* Success message adjustments */
-    .stSuccess {
-        font-size: 1rem;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-st.title("📅 Nepali Date Processing App")
-
 # Mock function to convert English date to Nepali date
 def convert_to_nepali_date(eng_date):
     try:
@@ -106,6 +68,23 @@ def map_month_to_name(np_date):
     }
     
     return month_mapping.get(np_month, 'Invalid Month')
+
+# Streamlit app
+st.set_page_config(page_title="Nepali Date Processing App", page_icon="📅", layout="wide")
+st.title("📅 Nepali Date Processing App")
+
+# Custom CSS to adjust display size
+st.markdown(
+    """
+    <style>
+    .css-1v3fvcr { font-size: 14px; } /* Adjust font size as needed */
+    .css-1r7g26i { width: 90%; margin: auto; } /* Center content */
+    .css-1emrehy { font-size: 14px; } /* Adjust font size for other elements */
+    .stButton { padding: 10px; } /* Adjust padding for buttons */
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Provide a link to download a sample workbook
 sample_url = "https://github.com/sudbrl/BS_Date/blob/main/BS_Date.xlsx"
