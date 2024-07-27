@@ -39,6 +39,10 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
+# Streamlit app configuration
+st.set_page_config(page_title="Nepali Date Processing App", page_icon="📅", layout="centered")
+st.title("📅 Nepali Date Processing App")
+
 # Mock function to convert English date to Nepali date
 def convert_to_nepali_date(eng_date):
     try:
@@ -101,10 +105,6 @@ def map_month_to_name(np_date):
     }
     
     return month_mapping.get(np_month, 'Invalid Month')
-
-# Streamlit app
-st.set_page_config(page_title="Nepali Date Processing App", page_icon="📅", layout="centered")
-st.title("📅 Nepali Date Processing App")
 
 # Provide a link to download a sample workbook
 sample_url = "https://github.com/sudbrl/BS_Date/blob/main/BS_Date.xlsx"
